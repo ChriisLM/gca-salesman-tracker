@@ -1,0 +1,52 @@
+<div class="modal-overlay">
+  <mat-card class="modal-card">
+    <mat-card-title class="title">Nuevo Vendedor</mat-card-title>
+    <mat-divider></mat-divider>
+    <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()" class="form-grid">
+
+      <!-- Avatar preview -->
+      <div class="avatar-preview">
+        <div mat-card-avatar class="avatar" [ngStyle]="{ 'background-image': 'url(assets/img/' + vendorForm.value.photo + '.jpg)' }"></div>
+        <mat-form-field appearance="outline" class="photo-input">
+          <mat-label>Foto</mat-label>
+          <mat-select formControlName="photo">
+            <mat-option *ngFor="let photo of photoOptions" [value]="photo">
+              <img [src]="'assets/img/' + photo + '.jpg'" width="24" style="vertical-align: middle; margin-right: 8px;" />
+              {{ photo }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Categoría</mat-label>
+        <input matInput formControlName="category" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="address" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Vehículo</mat-label>
+        <mat-select formControlName="vehicle">
+          <mat-option *ngFor="let vehicle of vehicleOptions" [value]="vehicle">
+            <img [src]="'assets/svg/' + vehicle + '.svg'" width="24" style="vertical-align: middle; margin-right: 8px;" />
+            {{ vehicle }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="modal-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="vendorForm.invalid">Crear</button>
+        <button mat-button type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

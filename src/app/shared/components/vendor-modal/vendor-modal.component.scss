@@ -1,0 +1,55 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  width: 600px;
+  padding: 1rem 2rem;
+
+  .title{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+}
+
+.avatar-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+
+  .avatar {
+    background-size: cover;
+    background-position: top;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0.5rem;
+  }
+
+  .photo-input {
+    margin-bottom: 0;
+  }
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+}
+

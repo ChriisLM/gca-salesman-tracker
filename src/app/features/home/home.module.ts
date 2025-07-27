@@ -9,6 +9,7 @@ import { VendorCardComponent } from './components/vendor-card/vendor-card.compon
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { CleanAddressPipe } from 'src/app/shared/pipes/clean-address.pipe';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CleanAddressPipe } from 'src/app/shared/pipes/clean-address.pipe';
     HomeRoutingModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule
   ]
 })
 export class HomeModule { }

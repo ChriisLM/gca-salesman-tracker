@@ -1,0 +1,10 @@
+<aside class="vendor-list">
+  <h2>{{vendorList.title | uppercase}}</h2>
+  <p>{{vendorList.description}}</p>
+  <div class="vendor-card-list" *ngIf="vendors.length > 0">
+    <app-vendor-card class="vendor-card" *ngFor="let vendor of vendors" [vendor]="vendor"/>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button color="primary">Crear Nuevo</button>
+  </div>
+</aside>

@@ -1,0 +1,35 @@
+@import 'src/variables';
+
+.vendor-list{
+  color: $text-color;
+  
+  h2{
+    text-align: center;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: normal;
+    margin-top: 0.5rem;
+  }
+
+  p{
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    color: $text-color-secondary;
+  }
+
+  .vendor-card-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .vendor-card:last-child{
+    margin-bottom: 1rem;
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: center;
+  }
+}

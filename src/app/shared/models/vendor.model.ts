@@ -14,3 +14,5 @@ export interface Vendor {
   photo: string;
   vehicle: string;
 }
+
+export type CreateVendor = Omit<Vendor, 'isActive' | 'coordinates'>;

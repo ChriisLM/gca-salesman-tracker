@@ -1,0 +1,36 @@
+<mat-card class="vendor-card">
+  <div class="vendor-content">
+    <div class="vendor-info">
+      <div>
+        <h2>{{ vendor.name | uppercase }}</h2>
+        <p>{{ vendor.category }}</p>
+        <p class="coordinates">
+          Latitud: {{ vendor.coordinates.latitude | number: '1.6-6' }}<br />
+          Longitud: {{ vendor.coordinates.longitude | number: '1.6-6' }}<br />
+          Altura: {{ vendor.coordinates.height }} m
+        </p>
+      </div>
+
+      <div>
+        <p class="vendor-address">{{ vendor.address | cleanAddress }}</p>
+        <p class="vehicle-title">Tipo de vehículo</p>
+        <p class="status" [class.inactive]="!vendor.isActive">
+          {{ vendor.isActive ? "Activo" : "Inactivo" }}
+        </p>
+      </div>
+    </div>
+
+    <div class="vendor-media">
+      <img
+        class="image"
+        [src]="'assets/img/' + vendor.photo + '.jpg'"
+        alt="Foto del vendedor"
+      />
+      <img
+        class="vehicle"
+        [src]="'assets/svg/' + vendor.vehicle + '.svg'"
+        [alt]="vendor.vehicle"
+      />
+    </div>
+  </div>
+</mat-card>

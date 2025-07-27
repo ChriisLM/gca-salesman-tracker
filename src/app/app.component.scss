@@ -1,0 +1,11 @@
+@import 'src/variables';
+
+.navbar {
+  padding: 0 1rem;
+  width: 64%;
+  margin-top: 0.5rem;
+}
+
+.mdc-tab--active, .mdc-tab-indicator--active{
+  background-color: #2f4e82 !important;
+}

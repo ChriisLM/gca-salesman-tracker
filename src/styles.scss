@@ -1,3 +1,46 @@
+@use '@angular/material' as mat;
+
+//Ajustando el color primario a la paleta del fondo
+$custom-primary: mat.define-palette((
+  50 : #e1e6ec,
+  100: #b4c0d1,
+  200: #8497b5,
+  300: #546d98,
+  400: #2f4e82,
+  500: #103052,
+  600: #0e2b49,
+  700: #0b233b,
+  800: #081a2d,
+  900: #051220,
+
+  A100: #5c8dff,
+  A200: #1c69ff,
+  A400: #004feb,
+  A700: #0039cb,
+
+  contrast: (
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+), 500); 
+
+$custom-accent : mat.define-palette(mat.$pink-palette, A200);
+$custom-warn   : mat.define-palette(mat.$red-palette);
+
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: $custom-primary,
+    accent : $custom-accent,
+    warn   : $custom-warn,
+  ),
+));
+
+@include mat.core();
+@include mat.all-component-themes($custom-theme);
+
 @import "~leaflet/dist/leaflet.css";
 @import "src/variables";
 
@@ -9,4 +52,5 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: $primary-color;
+  overflow-y: hidden;
 }

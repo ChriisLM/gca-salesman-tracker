@@ -1,3 +1,6 @@
+@import "~leaflet/dist/leaflet.css";
+@import "src/variables";
+
 html,
 body {
   height: 100%;
@@ -5,4 +8,5 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: $primary-color;
 }

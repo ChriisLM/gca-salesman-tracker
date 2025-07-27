@@ -1,0 +1,23 @@
+@import 'src/variables';
+
+.home-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  height: calc(100% - 64px);
+  padding: 0.5rem;
+
+  .home-map{
+    grid-column: span 2;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .home-vendor-list{
+    background-color: $gray-light;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-y: auto;
+  }
+}

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+import { VendorModalComponent } from 'src/app/shared/components/vendor-modal/vendor-modal.component';
 import { Vendor } from 'src/app/shared/models/vendor.model';
+import { MatDialog } from '@angular/material/dialog';
+import { VendorService } from 'src/app/core/services/vendor.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-vendor-list',
@@ -7,97 +11,27 @@ import { Vendor } from 'src/app/shared/models/vendor.model';
   styleUrls: ['./vendor-list.component.scss'],
 })
 export class VendorListComponent {
+  vendors: Vendor[] = [];
+  private subscription!: Subscription;
+
+  constructor(private dialog: MatDialog,private vendorService: VendorService) {}
+  ngOnInit(): void {
+    this.subscription = this.vendorService.vendors$.subscribe((vendors) => {
+      this.vendors = vendors;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   //informacion del componente
   vendorList = {
     title: 'listado de localizaciones',
-    description: 'listado de dispositivos que reportan su posicion'
-  }
+    description: 'listado de dispositivos que reportan su posicion',
+  };
 
-  //informacion de los vendedores de prueba
-  vendors: Vendor[] = [
-    {
-      id: 'v001',
-      name: 'Juan Pérez',
-      category: 'Vendedor Senior',
-      address: 'Calle 123 #45-67, Bogotá',
-      isActive: false,
-      coordinates: {
-        latitude: 4.7515127,
-        longitude: -74.08328479999999,
-        height: 65.0,
-      },
-      photo: 'person1',
-      vehicle: 'grua',
-    },
-    {
-      id: 'v001',
-      name: 'Juan Pérez',
-      category: 'Vendedor Senior',
-      address: 'Calle 123 #45-67, Bogotá',
-      isActive: false,
-      coordinates: {
-        latitude: 4.7515127,
-        longitude: -74.08328479999999,
-        height: 65.0,
-      },
-      photo: 'person2',
-      vehicle: 'moto',
-    },
-    {
-      id: 'v001',
-      name: 'Juan Pérez',
-      category: 'Vendedor Senior',
-      address: 'Calle 123 #45-67, Bogotá',
-      isActive: true,
-      coordinates: {
-        latitude: 4.7515127,
-        longitude: -74.08328479999999,
-        height: 65.0,
-      },
-      photo: 'person3',
-      vehicle: 'carro',
-    },
-    {
-      id: 'v001',
-      name: 'Juan Pérez',
-      category: 'Vendedor Senior',
-      address: 'Calle 123 #45-67, Bogotá',
-      isActive: false,
-      coordinates: {
-        latitude: 4.7515127,
-        longitude: -74.08328479999999,
-        height: 65.0,
-      },
-      photo: 'person4',
-      vehicle: 'ambulancia',
-    },
-    {
-      id: 'v001',
-      name: 'Juan Pérez',
-      category: 'Vendedor Senior',
-      address: 'Calle 123 #45-67, Bogotá',
-      isActive: false,
-      coordinates: {
-        latitude: 4.7515127,
-        longitude: -74.08328479999999,
-        height: 65.0,
-      },
-      photo: 'person5',
-      vehicle: 'sinvehiculo',
-    },
-    {
-      id: 'v001',
-      name: 'Juan Pérez',
-      category: 'Vendedor Senior',
-      address: 'Calle 123 #45-67, Bogotá',
-      isActive: true,
-      coordinates: {
-        latitude: 4.7515127,
-        longitude: -74.08328479999999,
-        height: 65.0,
-      },
-      photo: 'person6',
-      vehicle: 'pin4',
-    },
-  ];
+  openCreateVendorModal(): void {
+    this.dialog.open(VendorModalComponent);
+  }
 }

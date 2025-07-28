@@ -15,6 +15,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { VendorModalComponent } from './shared/components/vendor-modal/vendor-modal.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterLink,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatTabsModule,

@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   navLinks = [
     { path: '/home', label: 'Mapa' },
-    { path: '/page', label: 'Page 1' },
-    { path: '/page', label: 'Page 2' },
-    { path: '/page', label: 'Page 3' },
+    { path: '/home/vendor-search', label: 'Buscar Vendedores' },
+    { path: '/home/page', label: 'Page 2' },
+    { path: '/home/page', label: 'Page 3' },
   ];
 
   activeLink = this.navLinks[0];

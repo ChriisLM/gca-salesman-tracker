@@ -1,4 +1,8 @@
 <section class="home-wrapper">
-  <app-map class="home-map"></app-map>
+  <ng-container [ngSwitch]="currentView">
+    <app-map *ngSwitchCase="'map'" class="home-map"></app-map>
+    <app-vendor-search *ngSwitchCase="'vendorSearch'" class="home-map"></app-vendor-search>
+    <app-page1 *ngSwitchCase="'page1'" class="home-map"></app-page1>
+  </ng-container>
   <app-vendor-list class="home-vendor-list"></app-vendor-list>
 </section>

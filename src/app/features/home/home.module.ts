@@ -10,6 +10,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { CleanAddressPipe } from 'src/app/shared/pipes/clean-address.pipe';
 import { MatDialogModule } from '@angular/material/dialog';
+import { VendorSearchComponent } from '../pages/vendor-search/vendor-search.component';
+import { Page1Component } from '../pages/page1/page1.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CleanAddressPipe
   ],
   imports: [
+    VendorSearchComponent,
+    Page1Component,
     CommonModule,
     HomeRoutingModule,
     MatCardModule,

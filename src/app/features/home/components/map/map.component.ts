@@ -132,6 +132,14 @@ export class MapComponent {
     });
   }
 
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      if (this.map) {
+        this.map.invalidateSize();
+      }
+    }, 10000);
+  }
+
   ngOnDestroy(): void {
     if (this.map) {
       this.map.remove();

@@ -1,0 +1,53 @@
+<div class="filter-container">
+  <h2>{{ vendorSearchInfo.title | uppercase }}</h2>
+
+  <div class="filters-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Categoría</mat-label>
+      <mat-select
+        [(ngModel)]="selectedCategory"
+        (selectionChange)="applyFilters()"
+      >
+        <mat-option [value]="''">Todas</mat-option>
+        <mat-option *ngFor="let category of categories" [value]="category">{{
+          category
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Vehículo</mat-label>
+      <mat-select
+        [(ngModel)]="selectedVehicle"
+        (selectionChange)="applyFilters()"
+      >
+        <mat-option [value]="''">Todas</mat-option>
+        <mat-option *ngFor="let vehicle of vehicles" [value]="vehicle">{{
+          vehicle
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="vendor-list">
+    <mat-card *ngFor="let vendor of filteredVendors" class="vendor-card">
+      <mat-card-header class="card-header">
+        <div
+          class="vendor-photo"
+          [ngStyle]="{
+            'background-image': 'url(assets/img/' + vendor.photo + '.jpg)'
+          }"
+        ></div>
+        <mat-card-title> {{ vendor.name }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="card-content">
+        <mat-card-subtitle>Categoria: {{ vendor.category }}</mat-card-subtitle>
+        <p>
+          Vehiculo:
+          {{ vendor.vehicle | titlecase }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

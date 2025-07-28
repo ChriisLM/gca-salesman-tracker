@@ -1,27 +1,62 @@
-# GcaSalesmanTracker
+# Prueba Técnica Frontend – GCA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Descripción
 
-## Development server
+Esta aplicación web se desarrollo en **Angular 16**, en las que se buscaba:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Mostrar un listado de vendedores obtenidos desde un **API REST**.
+- Visualizar la ubicación de cada vendedor en un **mapa interactivo**.
+- Crear nuevos vendedores con formulario reactivo.
+- Navegar entre secciones (Mapa, Busqueda de Vendedores, etc).
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologías y librerías
 
-## Build
+- **Framework:** Angular 16
+- **Lenguaje:** TypeScript
+- **Estilos:** SASS (SCSS)
+- **UI:** Angular Material + custom components
+- **Mapas:** Leaflet + OpenStreetMap
+- **Reactividad:** RxJS
+- **Control de versiones:** Git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Caracteristicas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La aplicaion cuenta con 2 pestañas principalmente, con la idea de mostrar de manera consisa y lo mas claro posible la informacion traida con las peticiones al API.
 
-## Running end-to-end tests
+### Mapa
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+La pestaña principal cuenta de 2 partes un mapa interactivo y un listado de los venderos, para el mapa utilize el de Leaflet, el cual estile los pines o markas para que se visualizaran los vendedores con los svg de los vehiculos, ademas agregue el dialog que muestra un resumen del vendedor y cambia el pin por el de seleccionado.
 
-## Further help
+![Captura de pantalla del mapa](src/assets/img/mapa-gca.jpg)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+La otra sesion que es el listado, muestra en cards la informacion de las cordenadas de los vendedores junto a la foto de la persona, su nombre, la direccion, la categoria, el estado activo o inactivo y un svg del vehiculo, tambien coloque el boton para crear un nuevo vendedor, el cual muestra una modal para ingresar los datos.
+
+![Captura de lista de cordenadas](src/assets/img/new-vendor.jpg)
+
+Como requerimiento la informacion consumida por la api se va actualizando cada 30 segundos.
+
+### Buscar Vendedores
+
+Como agregado decide hacer unos filtros que separan por categoria y vehiculos la informacion de los vendedores, estos se muestran en cards con foto, nombre, la categoria y el vehiculo.
+
+![Captura de buscar vendedores](src/assets/img/vendors.jpg)
+
+### Page
+
+En las dos pestañas finales solo agregue un titulo de proximamente.
+
+---
+
+## Contacto
+
+**Autor:** Christian David Lezcano
+
+**Email:** christianlezcano878@gmail.com
+
+---
+
+*Gracias por la oportunidad de presentar esta prueba técnica.*

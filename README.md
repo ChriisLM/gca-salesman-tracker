@@ -6,6 +6,7 @@ Esta aplicación web se desarrollo en **Angular 16**, en las que se buscaba:
 
 - Mostrar un listado de vendedores obtenidos desde un **API REST**.
 - Visualizar la ubicación de cada vendedor en un **mapa interactivo**.
+- Actualizacion de la ubicacion de los vendedores en tiempo real
 - Crear nuevos vendedores con formulario reactivo.
 - Navegar entre secciones (Mapa, Busqueda de Vendedores, etc).
 
@@ -49,6 +50,17 @@ Como agregado decide hacer unos filtros que separan por categoria y vehiculos la
 
 En las dos pestañas finales solo agregue un titulo de proximamente.
 
+
+## Diseño Responsivo
+
+Se aplico estilos para la visualizacion en otros dispositivos
+
+**Tablet**
+
+![Captura de Tablet](src/assets/img/tablet-res.jpg)
+**Celular**
+
+![Captura de Celular](src/assets/img/mobile-res.jpg)
 ---
 
 ## Contacto

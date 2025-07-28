@@ -20,4 +20,31 @@
     border-radius: 8px;
     overflow-y: auto;
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+
+    .home-map {
+      grid-column: span 2;
+      height: 300px;
+    }
+
+    .home-vendor-list {
+      grid-column: span 2;
+      max-height: 300px;
+    }
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+
+    .home-map {
+      grid-column: span 1;
+      height: 250px;
+    }
+
+    .home-vendor-list {
+      grid-column: span 1;
+      max-height: 300px;
+    }
+  }
 }

@@ -18,9 +18,10 @@
   }
 
   .vendor-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    justify-items: center;
   }
 
   .vendor-card {
@@ -49,4 +50,28 @@
       padding-inline: 0.5rem;
     }
   }
+
+  @media (max-width: 768px) {
+    .filters-container {
+      flex-wrap: nowrap;
+    }
+    
+    .vendor-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .vendor-card{
+      scale: 0.8;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .vendor-list{
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
 }

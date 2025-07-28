@@ -1,4 +1,4 @@
-@import 'src/variables';
+@import "src/variables";
 
 .vendor-card {
   padding: 1rem;
@@ -18,18 +18,18 @@
     justify-content: space-between;
     width: 100%;
 
-    h2{
+    h2 {
       margin: 0;
       font-size: 1rem;
       line-height: normal;
     }
 
-    p{
+    p {
       font-size: 0.8rem;
       color: $text-color-secondary;
     }
 
-    .vehicle-title{
+    .vehicle-title {
       color: $text-color;
     }
 
@@ -38,7 +38,7 @@
       flex-direction: column;
     }
 
-    div:last-child{
+    div:last-child {
       justify-content: flex-end;
       text-align: end;
       margin-bottom: 0.5rem;
@@ -85,6 +85,50 @@
       left: -15px;
       width: 40px;
       height: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .vendor-content {
+      flex-direction: column-reverse;
+    }
+
+    .vendor-info {
+      flex-direction: column;
+      text-align: center;
+
+      div:last-child {
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .vendor-media {
+
+      .image {
+        width: 60px;
+        height: 80px;
+      }
+
+    }
+  }
+
+  @media (max-width: 480px) {
+    .vendor-card {
+      padding: 0.5rem;
+    }
+
+    .vendor-info h2 {
+      font-size: 0.9rem;
+    }
+
+    .vendor-info p {
+      font-size: 0.75rem;
+    }
+
+    .vendor-media .image {
+      width: 50px;
+      height: 70px;
     }
   }
 }

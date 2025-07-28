@@ -38,7 +38,7 @@
             'background-image': 'url(assets/img/' + vendor.photo + '.jpg)'
           }"
         ></div>
-        <mat-card-title> {{ vendor.name }}</mat-card-title>
+        <mat-card-title> {{ vendor.name | titlecase }}</mat-card-title>
       </mat-card-header>
 
       <mat-card-content class="card-content">
